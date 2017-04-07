@@ -13,6 +13,6 @@ Let say you are currently working on project in the directory ```/home/akhan/Doc
 
 |Case|Description|Example|
 |----|-----|-----|
-|```fm```|list the currently set markers|```$ fm```|
-|```fm +<char>```|store current director in market \<char\>|```$ fm +b```|
-|```fm`<char>```|change directory to the store directory |```$ fm b```|
+|```jd```|list the currently set markers|```$ jd```|
+|```jd +<char>```|store current director in market \<char\>|```$ jd +b```|
+|```jd`<char>```|change directory to the store directory |```$ jd b```|
