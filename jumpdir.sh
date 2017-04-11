@@ -11,16 +11,18 @@ JUMPDIR_MARKERS_FILE=$HOME/.jumpdir_data
 if [ ! -f $JUMPDIR_MARKERS_FILE ]; then
     touch $JUMPDIR_MARKERS_FILE;
 fi
-declare -a JUMPDIR_MARKERS;
-while read line
-do
-    JUMPDIR_N=$(echo $line | awk '{print $1}')
-    JUMPDIR_P=$(echo $line | awk '{print $2}')
-    JUMPDIR_MARKERS[$JUMPDIR_N]=$JUMPDIR_P;
-done < $JUMPDIR_MARKERS_FILE
 
+declare -a JUMPDIR_MARKERS;
 
 jd() {
+    # Loading markers
+    while read line
+    do
+        JUMPDIR_N=$(echo $line | awk '{print $1}')
+        JUMPDIR_P=$(echo $line | awk '{print $2}')
+        JUMPDIR_MARKERS[$JUMPDIR_N]=$JUMPDIR_P;
+    done < $JUMPDIR_MARKERS_FILE
+
     if (( $# == 0 ))
     then
         printf "Markers:\n"
